@@ -2,7 +2,6 @@ numbers = range(1, 1001)
 cube_numbers = []
 for num in numbers:
     cube_numbers.append(num ** 3)
-print(cube_numbers)
 
 # Часть a.
 numbers_sum_a = 0
