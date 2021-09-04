@@ -1,13 +1,22 @@
-declination_1 = [1, 21]
-declination_2 = [2, 3, 4, 22, 23, 24]
-declination_3 = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 29, 30]
+# Версия с input
+num = input('Введите число для склонения слова "процент": ')
+if len(num) > 1 and int(num[-2]) == 1 and 1 <= int(num[-1]) <= 9:
+    print(f'{num} процентов')
+elif int(num[-1]) == 1:
+    print(f'{num} процент')
+elif 2 <= int(num[-1]) <= 4:
+    print(f'{num} процента')
+elif 5 <= int(num[-1]) <= 9 or int(num[-1]) == 0:
+    print(f'{num} процентов')
 
-for num in range(1, 31):
-    if num in declination_1:
-        print(f'{num} процент.')
-    elif num in declination_2:
-        print(f'{num} процента.')
-    else:
-        print(f'{num} процентов.')
-
-
+# Версия с range
+# for num in range(1, 101):
+#     num = str(num)
+#     if len(num) > 1 and int(num[-2]) == 1 and 1 <= int(num[-1]) <= 9:
+#         print(f'{num} процентов')
+#     elif int(num[-1]) == 1:
+#         print(f'{num} процент')
+#     elif 2 <= int(num[-1]) <= 4:
+#         print(f'{num} процента')
+#     elif 5 <= int(num[-1]) <= 9 or int(num[-1]) == 0:
+#         print(f'{num} процентов')
