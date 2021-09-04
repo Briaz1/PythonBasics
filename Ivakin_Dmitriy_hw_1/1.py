@@ -1,3 +1,4 @@
+#Задание 1
 duration = int(input('Enter time in seconds: '))
 
 days = duration // 86400
