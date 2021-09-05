@@ -1,6 +1,6 @@
 # Версия с input
 num = input('Введите число для склонения слова "процент": ')
-if len(num) > 1 and int(num[-2]) == 1 and 1 <= int(num[-1]) <= 9:
+if len(num) > 1 and int(num[-2]) == 1:
     print(f'{num} процентов')
 elif int(num[-1]) == 1:
     print(f'{num} процент')
