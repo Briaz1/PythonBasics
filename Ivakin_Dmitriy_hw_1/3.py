@@ -12,7 +12,7 @@ elif 5 <= int(num[-1]) <= 9 or int(num[-1]) == 0:
 # Версия с range
 # for num in range(1, 101):
 #     num = str(num)
-#     if len(num) > 1 and int(num[-2]) == 1 and 1 <= int(num[-1]) <= 9:
+#     if len(num) > 1 and int(num[-2]) == 1:
 #         print(f'{num} процентов')
 #     elif int(num[-1]) == 1:
 #         print(f'{num} процент')
