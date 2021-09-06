@@ -1,7 +1,6 @@
 cube_numbers = []
-for num in range(1, 1001):
-    if num % 2 != 0:
-        cube_numbers.append(num ** 3)
+for num in range(1, 1001, 2):
+    cube_numbers.append(num ** 3)
 
 # Часть a.
 numbers_sum_a = 0
