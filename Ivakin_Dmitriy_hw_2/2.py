@@ -13,22 +13,36 @@ for idx, word in enumerate(task_list):
     if len(found_num) > 0:
         task_list[idx] = word.replace(''.join(found_num), f"{''.join(found_num):0>2}")
         num_index.append(idx)
-
-# Обособление кавычками
-for num in num_index:
-    task_list.insert(num, '"')
-    task_list.insert(num + 2, '"')
-    for idx, _ in enumerate(num_index):
-        num_index[idx] += 2
-
 print(task_list)
 
-# Обособляем числа кавычками
+# Сохраняем актуальные индексы чисел для вывода строки и расставления кавычек
+i = 1
+for idx, _ in enumerate(num_index):
+    num_index[idx] += i
+    i += 2
+print(num_index)
 
-# cur_position = 1
-# while cur_position < len(word_list):
-#     word_list.insert(cur_position, "*")
-#     # print(cur_position)
-#     cur_position += 2
-#     # print(word_list)
-# print(word_list)
+# Обособление кавычками
+for idx, num in enumerate(num_index):
+    task_list.insert(num - 1, '"')
+    task_list.insert(num + 1, '"')
+print(task_list)
+
+# Выводим строку
+task_str = ''
+for idx, word in enumerate(task_list):
+    if idx == 0:
+        task_str = f'{task_str}{word.capitalize()}'
+    elif idx in num_index:
+        task_str = f'{task_str} "{word}"'
+    elif word == '"':
+        continue
+    else:
+        task_str = f'{task_str} {word}'
+print(task_str)
+
+
+
+
+
+
