@@ -1,15 +1,20 @@
-task_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов', "+привет1друг2",
-             '-45']
-num_index = []
+task_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+num_index = []  # список для запоминания индексов подходящих под условие элементов (для обособления кавычками)
 # Дополняем числа до двух целочисленных разрядов
 for idx, word in enumerate(task_list):
     found_num = []
     for symbol in word:
-        if symbol.isdigit() is True:
-            found_num.append(symbol)
+        if ord(symbol) in range(49, 58) or symbol == '+' or symbol == '-':
+            if symbol.isdigit():
+                found_num.append(symbol)
+        else:
+            found_num = []
+            break
     if len(found_num) > 0:
         task_list[idx] = word.replace(''.join(found_num), f"{''.join(found_num):0>2}")
         num_index.append(idx)
+
+# Обособление кавычками
 for num in num_index:
     task_list.insert(num, '"')
     task_list.insert(num + 2, '"')
@@ -17,7 +22,6 @@ for num in num_index:
         num_index[idx] += 2
 
 print(task_list)
-print(num_index)
 
 # Обособляем числа кавычками
 
