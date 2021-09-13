@@ -13,16 +13,11 @@ def num_translate(num):
         'Ten': 'Десять',
 
     }
-    if num.capitalize() in translation:
-        if num.islower():
-            print(f'Перевод {num} на русский язык: {translation.get(num.capitalize()).lower()}.')
-        else:
-            print(f'Перевод {num} на русский язык: {translation.get(num)}.')
+
+    if num.capitalize() in translation and num.islower():
+        print(f'Перевод "{num}" на русский язык: {translation.get(num.capitalize()).lower()}.')
     else:
-        print(f'Перевод {num} на русский язык: {translation.get(num)}.')
+        print(f'Перевод "{num}" на русский язык: {translation.get(num)}.')
 
 
-# num_translate(input('Введите на английском число от 0 до 10 для перевода на русский: '))
-num_translate('Two')
-num_translate('two')
-num_translate('Ноль')
+num_translate(input('Введите на английском число от 0 до 10 для перевода на русский: '))
