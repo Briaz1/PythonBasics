@@ -1,4 +1,4 @@
-def num_translate(num):
+def num_translate_adv(num):
     translation = {
         'Zero': 'Ноль',
         'One': 'Один',
@@ -20,4 +20,4 @@ def num_translate(num):
         print(f'Перевод "{num}" на русский язык: {translation.get(num)}.')
 
 
-num_translate(input('Введите на английском число от 0 до 10 для перевода на русский: '))
+num_translate_adv(input('Введите на английском число от 0 до 10 для перевода на русский: '))
