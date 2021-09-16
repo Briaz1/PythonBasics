@@ -29,8 +29,9 @@ def get_jokes(amount: int, repeat=True):
                 break
             jokes_list.append(''.join(f'{nouns[num].capitalize()} {adverbs[num]} {adjectives[num]}'))
 
-    print(jokes_list)
+    print(*jokes_list, sep='\n')
 
 
 get_jokes(6)
+print('-' * 35)
 get_jokes(6, repeat=False)
