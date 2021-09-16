@@ -10,8 +10,7 @@ def num_translate_adv(num):
         'Seven': 'Семь',
         'Eight': 'Восемь',
         'Nine': 'Девять',
-        'Ten': 'Десять',
-
+        'Ten': 'Десять'
     }
 
     if num.capitalize() in translation and num.islower():
