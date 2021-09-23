@@ -24,9 +24,10 @@ def currency_rates(char_code):
                                               response.find('Date="') + 16], '%d.%m.%Y').date()
 
     return f'Курс {char_code} ({val_name}) на текущую дату {current_date}:' \
-           f' {float(currency_value.replace(",", ".")):.2f} рублей.'
+           f' {float(currency_value.replace(",", ".")):.2f} RUB.'
 
 
-print(currency_rates('usd'))
-print(currency_rates('eur'))
-print(currency_rates('jag'))
+if __name__ == '__main__':
+    print(currency_rates('usd'))
+    print(currency_rates('eur'))
+    print(currency_rates('jag'))
