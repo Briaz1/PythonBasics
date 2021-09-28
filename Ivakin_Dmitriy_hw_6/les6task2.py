@@ -1,15 +1,12 @@
-def get_key(val):
-    for key, value in dct.items():
-        if val == value:
-            return f'Максимальное количество запросов: {value} с ip-адреса {key}!'
+from collections import Counter
 
 
-dct = {}
+def spammers_finder(logs_file):
+    with open(logs_file, 'rt') as fp:
+        spammers = dict(Counter(line.split()[0] for line in fp).most_common(5))
+        for i, ip in enumerate(spammers):
+            yield f'Топ {i + 1} по количеству запросов ip-адрес {ip}. Количество запросов:  {spammers[ip]}.'
 
-with open('nginx_logs.txt', 'rt') as fp:
-    for line in fp:
-        ip = line.split()[0]
-        dct.setdefault(ip, 0)
-        dct[ip] += 1
-print(*dct.items(), sep='\n')
-print(get_key(max(dct.values())))
+
+for spammer in spammers_finder('nginx_logs.txt'):
+    print(spammer)
