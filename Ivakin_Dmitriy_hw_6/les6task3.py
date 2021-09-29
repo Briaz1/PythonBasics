@@ -9,12 +9,10 @@ def users_hobby_dict(users_file, hobby_file):
         if len(name) < len(interest):
             users_hobby = {name: interest for name, interest in zip(name, interest)}
             json.dump(users_hobby, uh)
-            print(users_hobby)
             exit(1)
         else:
             users_hobby = dict.fromkeys(name)
             users_hobby.update(zip(name, interest))
-            print(users_hobby)
             json.dump(users_hobby, uh)
 
 
